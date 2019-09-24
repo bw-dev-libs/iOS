@@ -9,38 +9,68 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
-  @IBOutlet weak var noun1TextField: UITextField!
-    @IBOutlet weak var verb1TextField: UITextField!
-    @IBOutlet weak var adjective1TextField: UITextField!
+    
+    //    @IBOutlet weak var noun1TextField: UITextField!
+    //    @IBOutlet weak var verb1TextField: UITextField!
+    //    @IBOutlet weak var adjective1TextField: UITextField!
     @IBOutlet weak var storyTitleTextField: UITextField!
+    @IBOutlet weak var mainTextField: UITextField!
     
-    var POSArray: [String] = []
+    let toGameView1 = "SegueToGameview1"
+    let toGameView2 = "SegueToGameview2"
+    let toGameView3 = "SegueToGameview3"
+    let toStoryTitlePage = "SegueToGameviewTitle"
     
+    let wordController = WordController()
     
+    var segueShouldOccur: Bool = true
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func submitPOSButtonTapped(_ sender: UIButton) {
         //guard let noun1TextField = noun1TextField.text else { return }
         //POSArray.append(noun1TextField)
-        #warning("Append each POS text field to Array")
+        
+        guard let word = mainTextField.text else { return }
+        
+        
+        if !word.isEmpty {
+            wordController.addWords(word)
+            #warning("save to core data")
+        } else {
+            let alert = UIAlertController(title: "No Words Found", message: "A word must be entered.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if  let textField = mainTextField.text {
+            if textField.isEmpty {
+                segueShouldOccur = false
+            }
+        }
+        return segueShouldOccur
     }
-    */
-
+    
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

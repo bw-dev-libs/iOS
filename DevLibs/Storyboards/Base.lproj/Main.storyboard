@@ -152,8 +152,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="submitPOSButtonTapped:" destination="BPO-Kp-7yH" eventType="touchUpInside" id="Abb-mK-HML"/>
-                                            <segue destination="P6V-p9-rmK" kind="show" id="g8q-Vt-yK8"/>
+                                            <action selector="submitPOSButtonTapped:" destination="BPO-Kp-7yH" eventType="touchUpInside" id="UCN-qg-Mx6"/>
+                                            <segue destination="P6V-p9-rmK" kind="show" identifier="SegueToGameview2" id="g8q-Vt-yK8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -191,9 +191,7 @@
                         <viewLayoutGuide key="safeArea" id="EKF-Gv-yEH"/>
                     </view>
                     <connections>
-                        <outlet property="enterPartOfSpeechLabel" destination="87R-29-yBz" id="8Lx-bF-Zh0"/>
-                        <outlet property="noun1TextField" destination="6ud-Cn-i6o" id="pgc-oR-vs0"/>
-                        <outlet property="progressView" destination="kWs-z2-y3f" id="f2Q-yF-0BY"/>
+                        <outlet property="mainTextField" destination="6ud-Cn-i6o" id="qaa-j8-CRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S39-6v-O03" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,7 +266,7 @@
                     <navigationItem key="navigationItem" title="Dashboard" id="A7e-ln-D4c">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Se9-2d-RNc">
                             <connections>
-                                <segue destination="BPO-Kp-7yH" kind="show" id="u60-Ew-awk"/>
+                                <segue destination="BPO-Kp-7yH" kind="show" identifier="SegueToGameview1" id="u60-Ew-awk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -326,7 +324,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="i0H-Hq-C5w" kind="show" id="5mf-ok-Yoo"/>
+                                            <action selector="submitPOSButtonTapped:" destination="P6V-p9-rmK" eventType="touchUpInside" id="sfj-RP-2QC"/>
+                                            <segue destination="i0H-Hq-C5w" kind="show" identifier="SegueToGameview3" id="5mf-ok-Yoo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -364,7 +363,7 @@
                         <viewLayoutGuide key="safeArea" id="Snh-np-78q"/>
                     </view>
                     <connections>
-                        <outlet property="verb1TextField" destination="Dlr-hi-hSf" id="kUm-Ew-9TH"/>
+                        <outlet property="mainTextField" destination="Dlr-hi-hSf" id="Pcj-jr-TRF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eE-ME-riv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -402,7 +401,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="gHu-IB-guw" kind="show" id="fZ9-26-99h"/>
+                                            <action selector="submitPOSButtonTapped:" destination="i0H-Hq-C5w" eventType="touchUpInside" id="pHq-WO-gjS"/>
+                                            <segue destination="gHu-IB-guw" kind="show" identifier="SegueToGameviewTitle" id="fZ9-26-99h"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -440,7 +440,7 @@
                         <viewLayoutGuide key="safeArea" id="kIF-bH-hJo"/>
                     </view>
                     <connections>
-                        <outlet property="adjective1TextField" destination="7sV-gq-ToJ" id="o4h-RC-nOv"/>
+                        <outlet property="mainTextField" destination="7sV-gq-ToJ" id="afA-H8-M4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ns4-mL-7hz" userLabel="First Responder" sceneMemberID="firstResponder"/>

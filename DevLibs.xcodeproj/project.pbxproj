@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0528D7B9233A80C400302BFA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528D7B8233A80C400302BFA /* GameViewController.swift */; };
+		0528D7BB233A915700302BFA /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528D7BA233A915700302BFA /* WordController.swift */; };
 		774103142339A036003B62DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774103132339A036003B62DE /* AppDelegate.swift */; };
 		774103192339A036003B62DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774103172339A036003B62DE /* Main.storyboard */; };
 		7741031B2339A036003B62DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7741031A2339A036003B62DE /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		0528D7B8233A80C400302BFA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		0528D7BA233A915700302BFA /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordController.swift; path = "DevLibs/View Controllers/WordController.swift"; sourceTree = SOURCE_ROOT; };
 		774103102339A036003B62DE /* DevLibs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevLibs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774103132339A036003B62DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774103182339A036003B62DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		7741032C233A5E9B003B62DE /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0528D7BA233A915700302BFA /* WordController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				7741033D233A7237003B62DE /* DashboardViewController.swift in Sources */,
 				7741033B233A7204003B62DE /* DashboardTableView.swift in Sources */,
 				0528D7B9233A80C400302BFA /* GameViewController.swift in Sources */,
+				0528D7BB233A915700302BFA /* WordController.swift in Sources */,
 				774103142339A036003B62DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
