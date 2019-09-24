@@ -26,39 +26,31 @@ class GameViewController: UIViewController {
     var segueShouldOccur: Bool = true
     
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
     @IBAction func submitPOSButtonTapped(_ sender: UIButton) {
-        //guard let noun1TextField = noun1TextField.text else { return }
-        //POSArray.append(noun1TextField)
-        
+    
         guard let word = mainTextField.text else { return }
-        
+//        guard let title = storyTitleTextField.text else { return }
         
         if !word.isEmpty {
             wordController.addWords(word)
             #warning("save to core data")
         } else {
-            let alert = UIAlertController(title: "No Words Found", message: "A word must be entered.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                self.navigationController?.popViewController(animated: true)
-            }))
+            wordController.addWords(" ")
+            #warning("save to core data")
         }
-    }
+       
+        }
+
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        if  let textField = mainTextField.text {
-            if textField.isEmpty {
-                segueShouldOccur = false
-            }
-        }
-        return segueShouldOccur
-    }
+    
+
+   
     
     
     
