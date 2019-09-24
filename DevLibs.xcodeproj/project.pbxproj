@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0528D7B9233A80C400302BFA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528D7B8233A80C400302BFA /* GameViewController.swift */; };
 		774103142339A036003B62DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774103132339A036003B62DE /* AppDelegate.swift */; };
 		774103192339A036003B62DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774103172339A036003B62DE /* Main.storyboard */; };
 		7741031B2339A036003B62DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7741031A2339A036003B62DE /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0528D7B8233A80C400302BFA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		774103102339A036003B62DE /* DevLibs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevLibs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774103132339A036003B62DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774103182339A036003B62DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				77410334233A6DB6003B62DE /* SignUpViewController.swift */,
 				7741033C233A7237003B62DE /* DashboardViewController.swift */,
+				0528D7B8233A80C400302BFA /* GameViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				77410339233A710F003B62DE /* DashboardTableViewCell.swift in Sources */,
 				7741033D233A7237003B62DE /* DashboardViewController.swift in Sources */,
 				7741033B233A7204003B62DE /* DashboardTableView.swift in Sources */,
+				0528D7B9233A80C400302BFA /* GameViewController.swift in Sources */,
 				774103142339A036003B62DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

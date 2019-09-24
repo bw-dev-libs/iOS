@@ -10,6 +10,9 @@ import UIKit
 
 class DashboardTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var dateTimeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
