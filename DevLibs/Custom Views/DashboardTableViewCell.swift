@@ -9,7 +9,9 @@
 import UIKit
 
 class DashboardTableViewCell: UITableViewCell {
-
+   
+    let segueToDetail = "SegueToStoryViewDetailFromCell"
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var dateTimeLabel: UILabel!

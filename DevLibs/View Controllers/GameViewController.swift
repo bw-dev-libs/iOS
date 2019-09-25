@@ -6,63 +6,110 @@
 //  Copyright © 2019 Ciara Beitel. All rights reserved.
 //
 
+enum GameState: String {
+    case programmingLanguage = "programmingLanguage", noun, verb, ingVerb, edVerb, noun2, title, detail
+}
+
 import UIKit
 
 class GameViewController: UIViewController {
     
-    //    @IBOutlet weak var noun1TextField: UITextField!
-    //    @IBOutlet weak var verb1TextField: UITextField!
-    //    @IBOutlet weak var adjective1TextField: UITextField!
-    @IBOutlet weak var storyTitleTextField: UITextField!
     @IBOutlet weak var mainTextField: UITextField!
     
-    let toGameView1 = "SegueToGameview1"
-    let toGameView2 = "SegueToGameview2"
-    let toGameView3 = "SegueToGameview3"
-    let toStoryTitlePage = "SegueToGameviewTitle"
+    let toStoryView1 = "SegueToStoryView1"
+    let toStoryView2 = "SegueToStoryView2"
+    let toStoryView3 = "SegueToStoryView3"
+    let toStoryView4 = "SegueToStoryView4"
+    let toStoryView5 = "SegueToStoryView5"
+    let toStoryView6 = "SegueToStoryView6"
+    let toStoryViewTitle = "SegueToStoryViewTitle"
+    let toStoryViewDetail = "SegueToStoryViewDetail"
     
-    let wordController = WordController()
+    var wordController: WordController?
     
-    var segueShouldOccur: Bool = true
+    var currentState: GameState = .noun
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
-    @IBAction func submitPOSButtonTapped(_ sender: UIButton) {
     
+    @IBAction func submitPOSButtonTapped(_ sender: UIButton) {
         guard let word = mainTextField.text else { return }
-//        guard let title = storyTitleTextField.text else { return }
         
         if !word.isEmpty {
+            guard let wordController = wordController else { return }
             wordController.addWords(word)
             #warning("save to core data")
+            
+            switch currentState {
+            case .programmingLanguage:
+                currentState = .noun
+                self.performSegue(withIdentifier: toStoryView2, sender: self)
+            case .noun:
+                currentState = .verb
+                self.performSegue(withIdentifier: toStoryView3, sender: self)
+            case .verb:
+                currentState = .ingVerb
+                self.performSegue(withIdentifier: toStoryView4, sender: self)
+            case .ingVerb:
+                currentState = .edVerb
+                self.performSegue(withIdentifier: toStoryView5, sender: self)
+            case .edVerb:
+                currentState = .noun2
+                self.performSegue(withIdentifier: toStoryView6, sender: self)
+            case .noun2:
+                currentState = .title
+                self.performSegue(withIdentifier: toStoryViewTitle, sender: self)
+            case .title:
+                currentState = .detail
+                self.performSegue(withIdentifier: toStoryViewDetail, sender: self)
+            default:
+                return
+            }
         } else {
-            wordController.addWords(" ")
+            //wordController.addWords(" ")
+            //alert
+            print("no word")
             #warning("save to core data")
         }
-       
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let wordController = wordController else { return }
+        if segue.identifier == toStoryView2 {
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .noun
         }
-
-    
-    
-
-   
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+        if segue.identifier == toStoryView3 {
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .verb
+        }
+        if segue.identifier == toStoryView4 {
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .ingVerb
+        }
+        if segue.identifier == toStoryView5 {
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .edVerb
+        }
+        if segue.identifier == toStoryView6 {
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .noun2
+        }
+        if segue.identifier == toStoryViewTitle {
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .title
+        }
+        if segue.identifier == toStoryViewDetail {
+            guard let destination = segue.destination as? StoryDetailViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .detail
+        }
+    }
 }

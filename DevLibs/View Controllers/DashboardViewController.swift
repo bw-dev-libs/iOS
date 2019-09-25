@@ -9,6 +9,8 @@
 import UIKit
 
 class DashboardViewController: UIViewController {
+    
+    let toStoryView1 = "SegueToStoryView1"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +19,19 @@ class DashboardViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func addStoryButtonTapped(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: toStoryView1, sender: self)
     }
-    */
+    
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == toStoryView1 {
+            guard let destination = segue.destination as? GameViewController else { return }
+            let wordController = WordController()
+            destination.wordController = wordController
+        }
+    }
 }
