@@ -6,63 +6,81 @@
 //  Copyright © 2019 Ciara Beitel. All rights reserved.
 //
 
+enum GameState: String {
+    case noun = "noun", verb, adjective, title, detail
+}
+
 import UIKit
 
 class GameViewController: UIViewController {
     
-    //    @IBOutlet weak var noun1TextField: UITextField!
-    //    @IBOutlet weak var verb1TextField: UITextField!
-    //    @IBOutlet weak var adjective1TextField: UITextField!
-    @IBOutlet weak var storyTitleTextField: UITextField!
     @IBOutlet weak var mainTextField: UITextField!
     
-    let toGameView1 = "SegueToGameview1"
-    let toGameView2 = "SegueToGameview2"
-    let toGameView3 = "SegueToGameview3"
-    let toStoryTitlePage = "SegueToGameviewTitle"
+    let toStoryView1 = "SegueToStoryView1"
+    let toStoryView2 = "SegueToStoryView2"
+    let toStoryView3 = "SegueToStoryView3"
+    let toStoryViewTitle = "SegueToStoryViewTitle"
+    let toStoryViewDetail = "SegueToStoryViewDetail"
     
     let wordController = WordController()
     
-    var segueShouldOccur: Bool = true
-    
-    
+    var currentState: GameState = .noun
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
-    @IBAction func submitPOSButtonTapped(_ sender: UIButton) {
     
+    @IBAction func submitPOSButtonTapped(_ sender: UIButton) {
         guard let word = mainTextField.text else { return }
-//        guard let title = storyTitleTextField.text else { return }
         
         if !word.isEmpty {
             wordController.addWords(word)
             #warning("save to core data")
+            
+            switch currentState {
+                case .noun:
+                    currentState = .verb
+                    self.performSegue(withIdentifier: toStoryView2, sender: self)
+                case .verb:
+                    currentState = .adjective
+                    self.performSegue(withIdentifier: toStoryView3, sender: self)
+                case .adjective:
+                    currentState = .title
+                    self.performSegue(withIdentifier: toStoryViewTitle, sender: self)
+                case .title:
+                    currentState = .detail
+                    self.performSegue(withIdentifier: toStoryViewDetail, sender: self)
+                default:
+                    return
+            }
         } else {
-            wordController.addWords(" ")
+            //wordController.addWords(" ")
+            //alert
+            print("no word")
             #warning("save to core data")
         }
-       
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == toStoryView2 {
+            if let destination = segue.destination as? GameViewController {
+                destination.currentState = .verb
+            }
         }
-
-    
-    
-
-   
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+        if segue.identifier == toStoryView3 {
+            if let destination = segue.destination as? GameViewController {
+                destination.currentState = .adjective
+            }
+        }
+        if segue.identifier == toStoryViewTitle {
+            if let destination = segue.destination as? GameViewController {
+                destination.currentState = .title
+            }
+        }
+        if segue.identifier == toStoryViewDetail {
+            if let destination = segue.destination as? StoryDetailViewController {
+                destination.currentState = .detail
+            }
+        }
+    }
 }
