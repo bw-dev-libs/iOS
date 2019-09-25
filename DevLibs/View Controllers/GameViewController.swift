@@ -22,8 +22,8 @@ class GameViewController: UIViewController {
     let toStoryViewTitle = "SegueToStoryViewTitle"
     let toStoryViewDetail = "SegueToStoryViewDetail"
     
-    let wordController = WordController()
-    
+    var wordController: WordController?
+
     var currentState: GameState = .noun
 
     override func viewDidLoad() {
@@ -34,6 +34,7 @@ class GameViewController: UIViewController {
         guard let word = mainTextField.text else { return }
         
         if !word.isEmpty {
+            guard let wordController = wordController else { return }
             wordController.addWords(word)
             #warning("save to core data")
             
@@ -62,25 +63,26 @@ class GameViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let wordController = wordController else { return }
         if segue.identifier == toStoryView2 {
-            if let destination = segue.destination as? GameViewController {
-                destination.currentState = .verb
-            }
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .verb
         }
         if segue.identifier == toStoryView3 {
-            if let destination = segue.destination as? GameViewController {
-                destination.currentState = .adjective
-            }
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .adjective
         }
         if segue.identifier == toStoryViewTitle {
-            if let destination = segue.destination as? GameViewController {
-                destination.currentState = .title
-            }
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .title
         }
         if segue.identifier == toStoryViewDetail {
-            if let destination = segue.destination as? StoryDetailViewController {
-                destination.currentState = .detail
-            }
+            guard let destination = segue.destination as? StoryDetailViewController else { return }
+            destination.wordController = wordController
+            destination.currentState = .detail
         }
     }
 }

@@ -268,10 +268,13 @@
                     <navigationItem key="navigationItem" title="Dashboard" id="A7e-ln-D4c">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Se9-2d-RNc">
                             <connections>
-                                <segue destination="BPO-Kp-7yH" kind="show" identifier="SegueToStoryView1" id="u60-Ew-awk"/>
+                                <action selector="addStoryButtonTapped:" destination="du3-Le-hZZ" id="r4A-Ng-zfz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BPO-Kp-7yH" kind="show" identifier="SegueToStoryView1" id="B4V-yV-1K3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEt-nx-Zyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -479,6 +482,9 @@
                                         <state key="normal" title="Create My Story!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitPOSButtonTapped:" destination="gHu-IB-guw" eventType="touchUpInside" id="XIm-o9-lyJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -562,6 +568,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kTq-ly-7a6"/>
                     </view>
+                    <connections>
+                        <outlet property="completedStoryTextView" destination="EuA-wY-VMP" id="Dff-tS-Y6j"/>
+                        <outlet property="storyTitleLabel" destination="qzI-if-8L3" id="gU3-Id-8Gj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TOl-Oc-5F8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -573,6 +583,6 @@
         <image name="green-wave-up-5" width="426" height="226"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d0w-Xi-p3d"/>
+        <segue reference="kkg-Wq-Htx"/>
     </inferredMetricsTieBreakers>
 </document>
