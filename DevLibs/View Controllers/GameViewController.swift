@@ -113,3 +113,14 @@ class GameViewController: UIViewController {
         }
     }
 }
+
+extension GameViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == mainTextField {
+            textField.resignFirstResponder()
+            return true
+        } else {
+            return false
+        }
+    }
+}

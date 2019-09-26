@@ -92,5 +92,20 @@ class SignUpViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         changeUI()
     }
+    
+}
 
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+            return true
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+            return true
+        } else {
+            return false
+        }
+    }
 }

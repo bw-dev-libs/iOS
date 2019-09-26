@@ -116,4 +116,28 @@ class APIController {
             completion(nil)
         }.resume()
     }
+    
+    func fetchTemplatesFromServer(completion: @escaping () -> Void = { }) {
+        // appendingPathComponent adds a /
+        // appendingPathExtension add a .
+        let requestURL = baseURL.appendingPathExtension("json")
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching tasks: \(error)")
+                completion()
+            }
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                completion()
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let userReprentations = try decoder.decode([String: UserRepresentation].self, from: data).map({ $0.value })
+                self.updateUser(with: userReprentations)
+            } catch {
+                NSLog("Error decoding: \(error)")
+            }
+            }.resume()
+    }
 }
