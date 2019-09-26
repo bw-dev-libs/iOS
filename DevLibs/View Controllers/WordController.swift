@@ -19,4 +19,8 @@ class WordController {
     func addWords(_ incomingNouns: String) {
         words.append(incomingNouns)
     }
+    
+    func removeElements() {
+        words.removeAll()
+    }
 }

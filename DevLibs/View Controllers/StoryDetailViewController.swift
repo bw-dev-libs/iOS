@@ -21,6 +21,7 @@ class StoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        self.navigationItem.hidesBackButton = true
 
         // Do any additional setup after loading the view.
     }
@@ -33,9 +34,10 @@ class StoryDetailViewController: UIViewController {
     }
     
     
-    @IBAction func saveStory(_ sender: UIBarButtonItem) {
-        //storyController.addStories(story)
-        // ADD STORY CONTROLLER WITH STORY
+    
+    @IBAction func DoneButtonTapped(_ sender: UIButton) {
+        navigationController?.popToViewController(DashboardViewController(), animated: true)
+        wordController?.removeElements()
     }
     
     
