@@ -65,8 +65,7 @@ After creating a user, you may log in to the API using the same credentials as y
 --- 
 
 ## Authors
-Ciara Beitel
-Marc Jacques
+Ciara Beitel and Marc Jacques
 
 ---
 
