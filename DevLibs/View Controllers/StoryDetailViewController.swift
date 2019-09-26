@@ -6,6 +6,7 @@
 //  Copyright © 2019 Ciara Beitel. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class StoryDetailViewController: UIViewController {
@@ -33,22 +34,9 @@ class StoryDetailViewController: UIViewController {
         storyTitleLabel.text = wordController.words[6]
     }
     
-    
-    
     @IBAction func DoneButtonTapped(_ sender: UIButton) {
-        navigationController?.popToViewController(DashboardViewController(), animated: true)
+        let dashboardVC = navigationController!.viewControllers.filter { $0 is DashboardViewController }.first!
+        navigationController!.popToViewController(dashboardVC, animated: true)
         wordController?.removeElements()
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

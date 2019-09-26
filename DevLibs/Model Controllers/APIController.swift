@@ -35,6 +35,7 @@ class APIController {
     
     var bearer: Bearer?
     var user: Int?
+    var template: Template?
     
     func signUp(with user: User, completion: @escaping (NetworkError?) -> Void) {
         let signUpURL = baseURL
@@ -123,12 +124,12 @@ class APIController {
     }
     
     func fetchTemplatesFromServer(completion: @escaping () -> Void = { }) {
-        let userID: LoginResponse
+        guard let userID = template?.userID else { return }
         let templateURL = baseURL
             .appendingPathComponent("users")
-            .appendingPathComponent(String(userID.user))
+            .appendingPathComponent("\(userID)")
             .appendingPathComponent("templates")
-        let requestURL = baseURL.appendingPathExtension("json")
+        let requestURL = templateURL.appendingPathExtension("json")
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching templates: \(error)")
@@ -146,7 +147,7 @@ class APIController {
             } catch {
                 NSLog("Error decoding: \(error)")
             }
-            }.resume()
+        }.resume()
     }
     
     func updateTemplates(with representations: [TemplateRepresentation]) {
@@ -168,14 +169,14 @@ class APIController {
                 for template in existingTemplates {
                     let id = template.id
                     guard let representation = representationsByID[Int(id)] else { continue }
-                    template.id = representation.id
+                    template.id = Int16(representation.id)
                     template.programmingLanguage = representation.programmingLanguage
                     template.noun = representation.noun
                     template.verb = representation.verb
                     template.ingVerb = representation.ingVerb
                     template.edVerb = representation.edVerb
                     template.noun2 = representation.noun2
-                    template.userID = representation.userID
+                    template.userID = Int16(representation.userID)
                     templatesToCreate.removeValue(forKey: Int(id))
                 }
                 

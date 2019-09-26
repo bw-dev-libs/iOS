@@ -22,6 +22,10 @@ class DashboardViewController: UIViewController {
     
 
     // MARK: - Navigation
+    
+    @IBAction func unwindToDashboard(_ sender: UIStoryboardSegue) {
+        
+    }
 
     
     @IBAction func addStoryButtonTapped(_ sender: UIBarButtonItem) {
