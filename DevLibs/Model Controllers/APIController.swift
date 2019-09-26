@@ -24,14 +24,14 @@ enum NetworkError: Error {
     case noToken
 }
 
-class APIcontroller {
+class APIController {
     
     let baseURL = URL(string: "https://dev-libs.herokuapp.com/api")!
     
     var bearer: Bearer?
+    var user: Int?
     
     func signUp(with user: User, completion: @escaping (NetworkError?) -> Void) {
-        
         let signUpURL = baseURL
             .appendingPathComponent("auth")
             .appendingPathComponent("register")
@@ -52,23 +52,23 @@ class APIcontroller {
         }
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode < 200 || response.statusCode >= 300 {
                 completion(.responseError)
                 return
             }
+            
             if let error = error {
                 NSLog("Error creating user on server: \(error)")
                 completion(.otherError(error))
                 return
             }
+            
             completion(nil)
         }.resume()
     }
     
     func login(with user: User, completion: @escaping (NetworkError?) -> Void) {
-        
         let loginURL = baseURL
             .appendingPathComponent("auth")
             .appendingPathComponent("login")
@@ -88,12 +88,12 @@ class APIcontroller {
         }
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode < 200 || response.statusCode >= 300 {
                 completion(.responseError)
                 return
             }
+            
             if let error = error {
                 NSLog("Error logging in: \(error)")
                 completion(.otherError(error))
@@ -105,13 +105,14 @@ class APIcontroller {
                 return
             }
             
-//            do {
-//                let bearer = try JSONDecoder().decode(Bearer.self, from: data)
-//                self.bearer = bearer
-//            } catch {
-//                completion(.noDecode)
-//                return
-//            }
+            do {
+                let response = try JSONDecoder().decode(LoginResponse.self, from: data)
+                self.bearer = Bearer(token: response.token)
+                self.user = response.user
+            } catch {
+                completion(.noDecode)
+                return
+            }
             completion(nil)
         }.resume()
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class WordController {
     
     private(set) var words: [String]

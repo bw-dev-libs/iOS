@@ -27,7 +27,7 @@ class GameViewController: UIViewController {
     
     var wordController: WordController?
     
-    var currentState: GameState = .noun
+    var currentState: GameState = .programmingLanguage
     
     override func viewDidLoad() {
         super.viewDidLoad()

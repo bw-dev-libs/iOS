@@ -1,5 +1,5 @@
 //
-//  Bearer.swift
+//  LoginResponse.swift
 //  DevLibs
 //
 //  Created by Ciara Beitel on 9/25/19.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-struct Bearer: Codable {
+struct LoginResponse: Codable {
     let token: String
+    let user: Int
 }

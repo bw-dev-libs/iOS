@@ -28,9 +28,17 @@ class StoryDetailViewController: UIViewController {
     func updateViews() {
         guard let wordController = wordController else { return }
         guard let completedStoryTextView = completedStoryTextView, let storyTitleLabel = storyTitleLabel else { return }
-        completedStoryTextView.text = "I was programming in \(wordController.words[0]), trying to get all of my \(wordController.words[1]) to properly \(wordController.words[2]). However, nothing was actually _____...It was then I realized I hadn't even _____ my _____."
-        storyTitleLabel.text = wordController.words[3]
+        completedStoryTextView.text = "I was programming in \(wordController.words[0]), trying to get all of my \(wordController.words[1]) to properly \(wordController.words[2]). However, nothing was actually \(wordController.words[3])...It was then I realized I hadn't even \(wordController.words[4]) my \(wordController.words[5])."
+        storyTitleLabel.text = wordController.words[6]
     }
+    
+    
+    @IBAction func saveStory(_ sender: UIBarButtonItem) {
+        //storyController.addStories(story)
+        // ADD STORY CONTROLLER WITH STORY
+    }
+    
+    
     /*
     // MARK: - Navigation
 

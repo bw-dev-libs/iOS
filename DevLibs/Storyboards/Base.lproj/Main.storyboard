@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0k3-J6-GB8">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0k3-J6-GB8">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,25 +24,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-wave-5" translatesAutoresizingMaskIntoConstraints="NO" id="bRL-Sz-T2t">
-                                <rect key="frame" x="0.0" y="88" width="414" height="452"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="226"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iid-tA-Ppi">
-                                <rect key="frame" x="166.5" y="590" width="81.5" height="25.5"/>
+                                <rect key="frame" x="166.5" y="364" width="81.5" height="25.5"/>
                                 <fontDescription key="fontDescription" name="SquareFont" family="SquareFont" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ql5-07-eJ2" userLabel="email/password">
-                                <rect key="frame" x="50" y="635.5" width="314" height="76"/>
+                                <rect key="frame" x="50" y="409.5" width="314" height="68"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFO-79-ndm">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYl-8T-M8e">
-                                        <rect key="frame" x="0.0" y="42" width="314" height="34"/>
+                                        <rect key="frame" x="0.0" y="38" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
@@ -48,7 +50,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Uq-N6-fBA">
-                                <rect key="frame" x="260" y="715.5" width="104" height="29"/>
+                                <rect key="frame" x="260" y="481.5" width="104" height="29"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
                                 <state key="normal" title="Forgot password?">
                                     <color key="titleColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,15 +60,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-11-1Jg">
-                                <rect key="frame" x="50" y="786.5" width="314" height="32"/>
+                                <rect key="frame" x="50" y="552.5" width="314" height="32"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
-                                <state key="normal" title="Create Account">
+                                <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="createAccountButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QIA-Ky-mZ2"/>
-                                    <segue destination="du3-Le-hZZ" kind="show" identifier="DashboardSegue" id="nW7-Vy-Fzc"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K99-Kg-7tL">
@@ -111,10 +112,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gNo-hP-oqD"/>
+                    <navigationItem key="navigationItem" id="gNo-hP-oqD">
+                        <barButtonItem key="backBarButtonItem" title="Log Out" id="0tx-LL-KYs"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="changeLoginSignUp" destination="AyZ-bg-MbL" id="iWH-rC-Qwz"/>
+                        <outlet property="loginSignUpText" destination="t7X-J1-e5A" id="eVe-W8-EBp"/>
                         <outlet property="passwordTextField" destination="JYl-8T-M8e" id="zfO-T5-M12"/>
+                        <outlet property="signUpOrLogInButton" destination="N7s-11-1Jg" id="g1c-uL-qQr"/>
+                        <outlet property="signUpOrLogInLabel" destination="Iid-tA-Ppi" id="4x5-Xa-1P9"/>
                         <outlet property="usernameTextField" destination="dFO-79-ndm" id="Md1-ma-seF"/>
+                        <segue destination="du3-Le-hZZ" kind="show" identifier="DashboardSegue" id="ZX9-cF-z1l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,16 +144,16 @@
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cBF-gZ-clL">
-                                <rect key="frame" x="50" y="439.5" width="314" height="86"/>
+                                <rect key="frame" x="50" y="439.5" width="314" height="82"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Noun" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ud-Cn-i6o">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Programming Language" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ud-Cn-i6o">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-eW-YUj">
-                                        <rect key="frame" x="0.0" y="54" width="314" height="32"/>
+                                        <rect key="frame" x="0.0" y="50" width="314" height="32"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <state key="normal" title="Submit">
@@ -163,8 +171,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="kWs-z2-y3f">
-                                <rect key="frame" x="50" y="545.5" width="314" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.14000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="kWs-z2-y3f">
+                                <rect key="frame" x="50" y="541.5" width="314" height="2"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.81960784310000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -217,7 +225,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DevLibCell" textLabel="bLx-bB-VFC" detailTextLabel="coP-Zl-eEN" style="IBUITableViewCellStyleValue1" id="OlE-kU-18w" customClass="DashboardTableViewCell" customModule="DevLibs" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OlE-kU-18w" id="pGA-B3-muV">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -311,16 +319,16 @@
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qfj-5e-0d7">
-                                <rect key="frame" x="50" y="439.5" width="314" height="86"/>
+                                <rect key="frame" x="50" y="439.5" width="314" height="82"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verb" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dlr-hi-hSf">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB2-bL-zWT">
-                                        <rect key="frame" x="0.0" y="54" width="314" height="32"/>
+                                        <rect key="frame" x="0.0" y="50" width="314" height="32"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <state key="normal" title="Submit">
@@ -338,8 +346,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="3lm-hQ-Qdz">
-                                <rect key="frame" x="50" y="545.5" width="314" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.28000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="3lm-hQ-Qdz">
+                                <rect key="frame" x="50" y="541.5" width="314" height="2"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.81960784310000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -388,16 +396,16 @@
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yrj-YI-rCV">
-                                <rect key="frame" x="50" y="439.5" width="314" height="86"/>
+                                <rect key="frame" x="50" y="439.5" width="314" height="82"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adjective" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sV-gq-ToJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verb" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sV-gq-ToJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjK-rV-wgK">
-                                        <rect key="frame" x="0.0" y="54" width="314" height="32"/>
+                                        <rect key="frame" x="0.0" y="50" width="314" height="32"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <state key="normal" title="Submit">
@@ -415,8 +423,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="UpU-Ws-QZy">
-                                <rect key="frame" x="50" y="545.5" width="314" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.41999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="UpU-Ws-QZy">
+                                <rect key="frame" x="50" y="541.5" width="314" height="2"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.81960784310000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -465,16 +473,16 @@
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3sr-hH-Oq0">
-                                <rect key="frame" x="50" y="439.5" width="314" height="86"/>
+                                <rect key="frame" x="50" y="439.5" width="314" height="82"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ga2-2k-O5X">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtE-5l-0oO">
-                                        <rect key="frame" x="0.0" y="54" width="314" height="32"/>
+                                        <rect key="frame" x="0.0" y="50" width="314" height="32"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <state key="normal" title="Create My Story!">
@@ -493,7 +501,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="PLK-s4-dMA">
-                                <rect key="frame" x="50" y="545.5" width="314" height="2"/>
+                                <rect key="frame" x="50" y="541.5" width="314" height="2"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.81960784310000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -518,7 +526,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KWU-WS-XIm"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jUO-05-vr1"/>
+                    <navigationItem key="navigationItem" id="jUO-05-vr1">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="OZ9-9a-7pT"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTextField" destination="Ga2-2k-O5X" id="yOl-YI-N2u"/>
                         <segue destination="Qgn-Vt-yWU" kind="show" identifier="SegueToStoryViewDetail" id="d0w-Xi-p3d"/>
@@ -567,7 +577,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kTq-ly-7a6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="u7T-CA-2Sd"/>
+                    <navigationItem key="navigationItem" id="u7T-CA-2Sd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MID-ol-ldc">
+                            <connections>
+                                <action selector="saveStory:" destination="Qgn-Vt-yWU" id="ue1-iw-sRt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="completedStoryTextView" destination="EuA-wY-VMP" id="Dff-tS-Y6j"/>
                         <outlet property="storyTitleLabel" destination="qzI-if-8L3" id="gU3-Id-8Gj"/>
@@ -575,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TOl-Oc-5F8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8872" y="21"/>
+            <point key="canvasLocation" x="8723" y="21"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="zyr-hh-bZL">
@@ -592,16 +608,16 @@
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XKU-D0-wn2">
-                                <rect key="frame" x="50" y="439.5" width="314" height="86"/>
+                                <rect key="frame" x="50" y="439.5" width="314" height="82"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adjective" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-dw-WSh">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verb ending in -ing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-dw-WSh">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNE-N7-tcd">
-                                        <rect key="frame" x="0.0" y="54" width="314" height="32"/>
+                                        <rect key="frame" x="0.0" y="50" width="314" height="32"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <state key="normal" title="Submit">
@@ -619,8 +635,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-R1-qAt">
-                                <rect key="frame" x="50" y="545.5" width="314" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.56000000000000005" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-R1-qAt">
+                                <rect key="frame" x="50" y="541.5" width="314" height="2"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.81960784310000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -670,16 +686,16 @@
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yxp-e2-Iru">
-                                <rect key="frame" x="50" y="439.5" width="314" height="86"/>
+                                <rect key="frame" x="50" y="439.5" width="314" height="82"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adjective" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yqM-wi-8zk">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2nd Noun" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yqM-wi-8zk">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5z-14-jfl">
-                                        <rect key="frame" x="0.0" y="54" width="314" height="32"/>
+                                        <rect key="frame" x="0.0" y="50" width="314" height="32"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <state key="normal" title="Submit">
@@ -697,8 +713,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="JBh-fr-2Uz">
-                                <rect key="frame" x="50" y="545.5" width="314" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.83999999999999997" translatesAutoresizingMaskIntoConstraints="NO" id="JBh-fr-2Uz">
+                                <rect key="frame" x="50" y="541.5" width="314" height="2"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.81960784310000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -748,16 +764,16 @@
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YiU-68-2XK">
-                                <rect key="frame" x="50" y="439.5" width="314" height="86"/>
+                                <rect key="frame" x="50" y="439.5" width="314" height="82"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adjective" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gko-we-fbn">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verb ending in -ed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gko-we-fbn">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tw2-Pl-csS">
-                                        <rect key="frame" x="0.0" y="54" width="314" height="32"/>
+                                        <rect key="frame" x="0.0" y="50" width="314" height="32"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                         <state key="normal" title="Submit">
@@ -775,8 +791,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="mZt-Tm-ULa">
-                                <rect key="frame" x="50" y="545.5" width="314" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="mZt-Tm-ULa">
+                                <rect key="frame" x="50" y="541.5" width="314" height="2"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.81960784310000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -817,6 +833,6 @@
         <image name="green-wave-up-5" width="426" height="226"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kkg-Wq-Htx"/>
+        <segue reference="d0w-Xi-p3d"/>
     </inferredMetricsTieBreakers>
 </document>
