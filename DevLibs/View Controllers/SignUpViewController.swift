@@ -14,6 +14,14 @@ enum LoginType {
 }
 
 class SignUpViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    var apiController = APIController()
+    var loginType = LoginType.signUp
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var signUpOrLogInLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,8 +29,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var loginSignUpText: UILabel!
     @IBOutlet weak var changeLoginSignUp: UIButton!
     
-    var apiController = APIController()
-    var loginType = LoginType.signUp
+    // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +79,10 @@ class SignUpViewController: UIViewController {
             })
         }
     }
+        
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        changeUI()
+    }
     
     func changeUI() {
         if self.loginType == .logIn {
@@ -88,11 +99,9 @@ class SignUpViewController: UIViewController {
             self.changeLoginSignUp.setTitle("Sign Up", for: .normal)
         }
     }
-    
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
-        changeUI()
-    }
 }
+
+// MARK: - Text Field Delegate
 
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
