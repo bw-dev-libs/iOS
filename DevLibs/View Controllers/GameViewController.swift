@@ -39,7 +39,6 @@ class GameViewController: UIViewController {
         if !word.isEmpty {
             guard let wordController = wordController else { return }
             wordController.addWords(word)
-            #warning("save to core data")
             
             switch currentState {
             case .programmingLanguage:
@@ -70,7 +69,6 @@ class GameViewController: UIViewController {
             //wordController.addWords(" ")
             //alert
             print("no word")
-            #warning("save to core data")
         }
     }
     

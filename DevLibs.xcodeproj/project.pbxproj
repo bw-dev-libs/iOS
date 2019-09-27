@@ -21,10 +21,10 @@
 		77410333233A642E003B62DE /* CC-boards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77410332233A642E003B62DE /* CC-boards.storyboard */; };
 		77410335233A6DB6003B62DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77410334233A6DB6003B62DE /* SignUpViewController.swift */; };
 		77410339233A710F003B62DE /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77410338233A710F003B62DE /* DashboardTableViewCell.swift */; };
-		7741033B233A7204003B62DE /* DashboardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741033A233A7204003B62DE /* DashboardTableView.swift */; };
 		7741033D233A7237003B62DE /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741033C233A7237003B62DE /* DashboardViewController.swift */; };
 		7741033E233A75EC003B62DE /* Square.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77410330233A5F16003B62DE /* Square.ttf */; };
 		777C8DA7233C2F3F0094D2D8 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C8DA6233C2F3F0094D2D8 /* LoginResponse.swift */; };
+		777C8DAE233DB2620094D2D8 /* StoryDetailFromCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C8DAD233DB2620094D2D8 /* StoryDetailFromCellViewController.swift */; };
 		778CF00A233ABFB10072C334 /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778CF009233ABFB10072C334 /* StoryDetailViewController.swift */; };
 		778CF00C233BABDA0072C334 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778CF00B233BABDA0072C334 /* APIController.swift */; };
 		778CF00E233BABF30072C334 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778CF00D233BABF30072C334 /* User.swift */; };
@@ -51,9 +51,9 @@
 		77410332233A642E003B62DE /* CC-boards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "CC-boards.storyboard"; sourceTree = "<group>"; };
 		77410334233A6DB6003B62DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		77410338233A710F003B62DE /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
-		7741033A233A7204003B62DE /* DashboardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableView.swift; sourceTree = "<group>"; };
 		7741033C233A7237003B62DE /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		777C8DA6233C2F3F0094D2D8 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		777C8DAD233DB2620094D2D8 /* StoryDetailFromCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailFromCellViewController.swift; sourceTree = "<group>"; };
 		778CF009233ABFB10072C334 /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
 		778CF00B233BABDA0072C334 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		778CF00D233BABF30072C334 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -152,7 +152,6 @@
 		7741032E233A5EA8003B62DE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				7741033A233A7204003B62DE /* DashboardTableView.swift */,
 				77410338233A710F003B62DE /* DashboardTableViewCell.swift */,
 			);
 			path = "Custom Views";
@@ -165,6 +164,7 @@
 				7741033C233A7237003B62DE /* DashboardViewController.swift */,
 				0528D7B8233A80C400302BFA /* GameViewController.swift */,
 				778CF009233ABFB10072C334 /* StoryDetailViewController.swift */,
+				777C8DAD233DB2620094D2D8 /* StoryDetailFromCellViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 				057BC8B6233D213600667DDB /* Template+Convenience.swift in Sources */,
 				7741033D233A7237003B62DE /* DashboardViewController.swift in Sources */,
 				778CF017233BFC180072C334 /* StoryController.swift in Sources */,
-				7741033B233A7204003B62DE /* DashboardTableView.swift in Sources */,
+				777C8DAE233DB2620094D2D8 /* StoryDetailFromCellViewController.swift in Sources */,
 				778CF00C233BABDA0072C334 /* APIController.swift in Sources */,
 				777C8DA7233C2F3F0094D2D8 /* LoginResponse.swift in Sources */,
 				057BC8BA233D277500667DDB /* CoreDataStack.swift in Sources */,

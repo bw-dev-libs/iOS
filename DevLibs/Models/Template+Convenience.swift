@@ -17,25 +17,26 @@ extension Template {
             let verb = verb,
             let ingVerb = ingVerb,
             let edVerb = edVerb,
-            let noun2 = noun2 else { return nil }
+            let noun2 = noun2,
+            let title = title else { return nil }
         
         
-        return TemplateRepresentation(id: Int(id), programmingLanguage: programmingLanguage, noun: noun, verb: verb, ingVerb: ingVerb, edVerb: edVerb, noun2: noun2, userID: Int(userID))
+        return TemplateRepresentation(id: UUID(), programmingLanguage: programmingLanguage, noun: noun, verb: verb, ingVerb: ingVerb, edVerb: edVerb, noun2: noun2, title: title)
     }
-    convenience init(id: Int, programmingLanguage: String?, noun: String?, verb: String?, ingVerb: String?, edVerb: String?, noun2: String?, userID: Int, context: NSManagedObjectContext) {
+    convenience init(id: UUID, programmingLanguage: String?, noun: String?, verb: String?, ingVerb: String?, edVerb: String?, noun2: String?, title: String?, context: NSManagedObjectContext) {
         
         // Setting up the generic NSManagedObject functionality of the model object
         // The generic chunk of clay
         self.init(context: context)
         // Once we have the clay, we can begin sculpting it into our unique model object
-        self.id = Int16(id)
+        self.id = UUID()
         self.programmingLanguage =  programmingLanguage
         self.noun = noun
         self.verb = verb
         self.ingVerb = ingVerb
         self.edVerb = edVerb
         self.noun2 = noun2
-        self.userID = Int16(userID)
+        self.title = title
     }
     
     @discardableResult convenience init?(templateRepresentation: TemplateRepresentation, context: NSManagedObjectContext) {
@@ -47,7 +48,7 @@ extension Template {
                   ingVerb: templateRepresentation.ingVerb,
                   edVerb: templateRepresentation.edVerb,
                   noun2: templateRepresentation.noun2,
-                  userID: templateRepresentation.userID,
+                  title: templateRepresentation.title,
                   context: context)
     }
 }

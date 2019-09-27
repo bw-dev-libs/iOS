@@ -11,6 +11,8 @@ import UIKit
 
 class StoryDetailViewController: UIViewController {
     
+    var apiController = APIController()
+    
     @IBOutlet weak var storyTitleLabel: UILabel!
     
     @IBOutlet weak var completedStoryTextView: UITextView!
@@ -35,8 +37,13 @@ class StoryDetailViewController: UIViewController {
     }
     
     @IBAction func DoneButtonTapped(_ sender: UIButton) {
+        guard let wordController = wordController else { return }
+        let _ = apiController.createTemplate(id: UUID(), programmingLanguage: wordController.words[0], noun: wordController.words[1], verb: wordController.words[2], ingVerb: wordController.words[3], edVerb: wordController.words[4], noun2: wordController.words[5], title: wordController.words[6])
+        //wordController.removeElements()
+        
         let dashboardVC = navigationController!.viewControllers.filter { $0 is DashboardViewController }.first!
         navigationController!.popToViewController(dashboardVC, animated: true)
-        wordController?.removeElements()
+        
+      
     }
 }

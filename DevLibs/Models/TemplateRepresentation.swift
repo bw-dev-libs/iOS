@@ -9,12 +9,12 @@
 import Foundation
 
 struct TemplateRepresentation: Codable {
-    let id: Int
+    let id: UUID
     let programmingLanguage: String
     let noun: String
     let verb: String
     let ingVerb: String
     let edVerb: String
     let noun2: String
-    let userID: Int
+    let title: String
 }

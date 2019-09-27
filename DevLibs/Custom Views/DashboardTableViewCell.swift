@@ -20,13 +20,11 @@ class DashboardTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var dateTimeLabel: UILabel!
     
     func updateViews() {
         guard let template = template else { return }
         
-        titleLabel.text = "\(template.id)"
-        dateTimeLabel.text = "\(Date())"
+        titleLabel.text = template.title
     }
     
     override func awakeFromNib() {

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, UITableViewDelegate {
     
     let toStoryView1 = "SegueToStoryView1"
     
@@ -17,10 +17,10 @@ class DashboardViewController: UIViewController {
     
     lazy var fetchResultsController: NSFetchedResultsController<Template> = {
         let fetchRequest: NSFetchRequest<Template> = Template.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: CoreDataStack.shared.mainContext,
-                                             sectionNameKeyPath: "id",
+                                             sectionNameKeyPath: nil,
                                              cacheName: nil)
         frc.delegate = self
         do {
@@ -57,6 +57,13 @@ class DashboardViewController: UIViewController {
             let wordController = WordController()
             destination.wordController = wordController
         }
+        if segue.identifier == "ToCellStoryDetailSegue" {
+            guard let destination = segue.destination as? StoryDetailFromCellViewController,
+            let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let template = fetchResultsController.object(at: indexPath)
+            destination.template = template
+        }
     }
 }
 
@@ -64,7 +71,7 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchResultsController.sections?.count ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,6 +82,8 @@ extension DashboardViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DevLibCell", for: indexPath) as? DashboardTableViewCell else { return UITableViewCell() }
         
         let template = fetchResultsController.object(at: indexPath)
+        
+        cell.template = template
         
         return cell
     }
@@ -87,9 +96,6 @@ extension DashboardViewController: UITableViewDataSource {
             apiController.deleteTemplate(template: template)
         }
     }
-}
-
-extension DashboardViewController: UITableViewDelegate {
 }
 
 // MARK: - NSFetchedResultsControllerDelegate Methods
@@ -124,6 +130,23 @@ extension DashboardViewController: NSFetchedResultsControllerDelegate {
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)
         @unknown default:
+            return
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
+        
+        let sectionSet = IndexSet(integer: sectionIndex)
+        
+        switch type {
+        case .insert:
+            tableView.insertSections(sectionSet, with: .automatic)
+        case .delete:
+            tableView.deleteSections(sectionSet, with: .automatic)
+        default:
             return
         }
     }

@@ -27,13 +27,13 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="226"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iid-tA-Ppi">
-                                <rect key="frame" x="164" y="364" width="86.5" height="28"/>
+                                <rect key="frame" x="166.5" y="364" width="81.5" height="25.5"/>
                                 <fontDescription key="fontDescription" name="SquareFont" family="SquareFont" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ql5-07-eJ2" userLabel="email/password">
-                                <rect key="frame" x="50" y="412" width="314" height="68"/>
+                                <rect key="frame" x="50" y="409.5" width="314" height="68"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFO-79-ndm">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
@@ -50,7 +50,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-11-1Jg">
-                                <rect key="frame" x="50" y="555" width="314" height="32"/>
+                                <rect key="frame" x="50" y="552.5" width="314" height="32"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                 <state key="normal" title="Sign Up">
@@ -208,11 +208,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-wave-up-5" translatesAutoresizingMaskIntoConstraints="NO" id="beV-WP-Xbz">
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V67-gd-nQV" customClass="DashboardTableView" customModule="DevLibs" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V67-gd-nQV">
                                 <rect key="frame" x="0.0" y="314" width="414" height="322"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DevLibCell" textLabel="bLx-bB-VFC" detailTextLabel="coP-Zl-eEN" style="IBUITableViewCellStyleValue1" id="OlE-kU-18w" customClass="DashboardTableViewCell" customModule="DevLibs" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DevLibCell" textLabel="bLx-bB-VFC" style="IBUITableViewCellStyleDefault" id="OlE-kU-18w" customClass="DashboardTableViewCell" customModule="DevLibs" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OlE-kU-18w" id="pGA-B3-muV">
@@ -220,14 +220,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bLx-bB-VFC">
-                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Date/Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="coP-Zl-eEN" userLabel="Date/Time">
-                                                    <rect key="frame" x="314.5" y="12" width="79.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -235,13 +228,17 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="dateTimeLabel" destination="coP-Zl-eEN" id="pmz-s1-Dze"/>
                                             <outlet property="titleLabel" destination="bLx-bB-VFC" id="qml-5h-USX"/>
-                                            <segue destination="Qgn-Vt-yWU" kind="show" identifier="SegueToStoryViewDetailFromCell" id="kkg-Wq-Htx"/>
+                                            <segue destination="Mbo-qM-81r" kind="show" identifier="ToCellStoryDetailSegue" id="NBu-Bi-Dhx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="du3-Le-hZZ" id="vXp-qN-u9E"/>
+                                    <outlet property="delegate" destination="du3-Le-hZZ" id="kxE-qf-ALD"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -273,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEt-nx-Zyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="21"/>
+            <point key="canvasLocation" x="1873.913043478261" y="20.758928571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v62-gh-vBb">
@@ -607,7 +604,7 @@
                                 <rect key="frame" x="0.0" y="636" width="414" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XKU-D0-wn2">
-                                <rect key="frame" x="50" y="442" width="314" height="82"/>
+                                <rect key="frame" x="50" y="439.5" width="314" height="82"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verb ending in -ing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-dw-WSh">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
@@ -629,13 +626,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Verb ending in ing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8n-Ru-iDg">
-                                <rect key="frame" x="69.5" y="364" width="275.5" height="28"/>
+                                <rect key="frame" x="58.5" y="364" width="297" height="25.5"/>
                                 <fontDescription key="fontDescription" name="SquareFont" family="SquareFont" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.56000000000000005" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-R1-qAt">
-                                <rect key="frame" x="50" y="544" width="314" height="2"/>
+                                <rect key="frame" x="50" y="541.5" width="314" height="2"/>
                                 <color key="tintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.33333333329999998" green="0.68627450980000004" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.81960784310000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -826,12 +823,59 @@
             </objects>
             <point key="canvasLocation" x="6113" y="21"/>
         </scene>
+        <!--Story Detail From Cell View Controller-->
+        <scene sceneID="Plf-kU-mRI">
+            <objects>
+                <viewController id="Mbo-qM-81r" customClass="StoryDetailFromCellViewController" customModule="DevLibs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="303-L8-Vr5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-wave-up-5" translatesAutoresizingMaskIntoConstraints="NO" id="8KT-od-Emu">
+                                <rect key="frame" x="0.0" y="636" width="414" height="226"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TR-FE-BZb">
+                                <rect key="frame" x="138.5" y="138" width="137" height="25.5"/>
+                                <fontDescription key="fontDescription" name="SquareFont" family="SquareFont" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q5e-Z5-FwU">
+                                <rect key="frame" x="50" y="188.5" width="314" height="422.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="umq-18-EA2" firstAttribute="trailing" secondItem="8KT-od-Emu" secondAttribute="trailing" id="7dn-BJ-hZQ"/>
+                            <constraint firstItem="q5e-Z5-FwU" firstAttribute="leading" secondItem="umq-18-EA2" secondAttribute="leading" constant="50" id="CiA-Da-q9d"/>
+                            <constraint firstItem="8KT-od-Emu" firstAttribute="leading" secondItem="umq-18-EA2" secondAttribute="leading" id="Htj-gw-dK0"/>
+                            <constraint firstItem="q5e-Z5-FwU" firstAttribute="top" secondItem="1TR-FE-BZb" secondAttribute="bottom" constant="25" id="IsH-FZ-eUu"/>
+                            <constraint firstItem="umq-18-EA2" firstAttribute="trailing" secondItem="q5e-Z5-FwU" secondAttribute="trailing" constant="50" id="L6r-Rd-yfR"/>
+                            <constraint firstItem="1TR-FE-BZb" firstAttribute="top" secondItem="umq-18-EA2" secondAttribute="top" constant="50" id="Tac-K9-iDA"/>
+                            <constraint firstItem="1TR-FE-BZb" firstAttribute="centerX" secondItem="303-L8-Vr5" secondAttribute="centerX" id="dp3-A1-DKS"/>
+                            <constraint firstItem="8KT-od-Emu" firstAttribute="top" secondItem="q5e-Z5-FwU" secondAttribute="bottom" constant="25" id="lnu-8I-z0o"/>
+                            <constraint firstItem="umq-18-EA2" firstAttribute="bottom" secondItem="8KT-od-Emu" secondAttribute="bottom" id="r5q-4X-h0t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="umq-18-EA2"/>
+                    </view>
+                    <connections>
+                        <outlet property="completedStoryTextView" destination="q5e-Z5-FwU" id="rae-CC-uHL"/>
+                        <outlet property="storyTitleLabel" destination="1TR-FE-BZb" id="Vtb-Pk-Zsa"/>
+                        <segue destination="2Nh-9t-zAL" kind="unwind" identifier="UnwindToDashboard" unwindAction="unwindToDashboard:" id="FXA-nF-JCI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gRZ-vG-7Pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2Nh-9t-zAL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2414" y="713"/>
+        </scene>
     </scenes>
     <resources>
         <image name="green-wave-5" width="426" height="226"/>
         <image name="green-wave-up-5" width="426" height="226"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="kkg-Wq-Htx"/>
-    </inferredMetricsTieBreakers>
 </document>
