@@ -361,7 +361,7 @@
                     </view>
                     <connections>
                         <outlet property="mainTextField" destination="Dlr-hi-hSf" id="Pcj-jr-TRF"/>
-                        <segue destination="i0H-Hq-C5w" kind="show" identifier="SegueToStoryView3" id="tLO-25-fmi"/>
+                        <segue destination="i0H-Hq-C5w" kind="show" identifier="SegueToStoryView3" id="dsk-oy-mow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eE-ME-riv" userLabel="First Responder" sceneMemberID="firstResponder"/>

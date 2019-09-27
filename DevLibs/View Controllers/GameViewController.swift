@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
     let toStoryView6 = "SegueToStoryView6"
     let toStoryViewTitle = "SegueToStoryViewTitle"
     let toStoryViewDetail = "SegueToStoryViewDetail"
-    
+        
     var wordController: WordController?
     
     var currentState: GameState = .programmingLanguage
@@ -37,7 +37,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainTextField.becomeFirstResponder()
         mainTextField.delegate = self
     }
     
