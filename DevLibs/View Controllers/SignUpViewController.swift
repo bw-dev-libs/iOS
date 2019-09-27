@@ -1,9 +1,9 @@
 //
 //  SignUpViewController.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Ciara Beitel on 9/24/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 import UIKit
@@ -92,7 +92,6 @@ class SignUpViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         changeUI()
     }
-    
 }
 
 extension SignUpViewController: UITextFieldDelegate {

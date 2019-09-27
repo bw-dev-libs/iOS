@@ -1,9 +1,9 @@
 //
 //  DashboardViewController.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Ciara Beitel on 9/24/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 import UIKit
@@ -11,17 +11,14 @@ import CoreData
 
 class DashboardViewController: UIViewController, UITableViewDelegate {
     
+    // MARK: - Properties
+    
     let toStoryView1 = "SegueToStoryView1"
-    
     let apiController = APIController()
-    
     lazy var fetchResultsController: NSFetchedResultsController<Template> = {
         let fetchRequest: NSFetchRequest<Template> = Template.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                             managedObjectContext: CoreDataStack.shared.mainContext,
-                                             sectionNameKeyPath: nil,
-                                             cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
         do {
             try frc.performFetch()
@@ -31,7 +28,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate {
         return frc
     }()
     
+    // MARK: - Outlets
+
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,11 +111,7 @@ extension DashboardViewController: NSFetchedResultsControllerDelegate {
         tableView.endUpdates()
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
-                    didChange anObject: Any,
-                    at indexPath: IndexPath?,
-                    for type: NSFetchedResultsChangeType,
-                    newIndexPath: IndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             guard let newIndexPath = newIndexPath else { return }
@@ -134,10 +131,7 @@ extension DashboardViewController: NSFetchedResultsControllerDelegate {
         }
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
-                    didChange sectionInfo: NSFetchedResultsSectionInfo,
-                    atSectionIndex sectionIndex: Int,
-                    for type: NSFetchedResultsChangeType) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         
         let sectionSet = IndexSet(integer: sectionIndex)
         

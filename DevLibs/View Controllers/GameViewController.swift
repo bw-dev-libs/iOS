@@ -1,9 +1,9 @@
 //
 //  GameViewController.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Marc Jacques on 9/24/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 enum GameState: String {
@@ -14,7 +14,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var mainTextField: UITextField!
+    // MARK: - Properties
     
     let toStoryView1 = "SegueToStoryView1"
     let toStoryView2 = "SegueToStoryView2"
@@ -29,9 +29,17 @@ class GameViewController: UIViewController {
     
     var currentState: GameState = .programmingLanguage
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var mainTextField: UITextField!
+    
+    // MARK: - Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: - Navigation
     
     @IBAction func submitPOSButtonTapped(_ sender: UIButton) {
         guard let word = mainTextField.text else { return }
@@ -66,9 +74,11 @@ class GameViewController: UIViewController {
                 return
             }
         } else {
-            //wordController.addWords(" ")
-            //alert
-            print("no word")
+            let alert = UIAlertController(title: "No word entered", message: "Please enter a word.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true) {
+            }
         }
     }
     
@@ -111,6 +121,8 @@ class GameViewController: UIViewController {
         }
     }
 }
+
+// MARK: - Text Field Delegate
 
 extension GameViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -1,16 +1,15 @@
 //
 //  Template+Convenience.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Marc Jacques on 9/26/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
 extension Template {
-    
     var templateRepresentation: TemplateRepresentation? {
         guard let programmingLanguage = programmingLanguage,
             let noun = noun,
@@ -19,16 +18,11 @@ extension Template {
             let edVerb = edVerb,
             let noun2 = noun2,
             let title = title else { return nil }
-        
-        
         return TemplateRepresentation(id: UUID(), programmingLanguage: programmingLanguage, noun: noun, verb: verb, ingVerb: ingVerb, edVerb: edVerb, noun2: noun2, title: title)
     }
+    
     convenience init(id: UUID, programmingLanguage: String?, noun: String?, verb: String?, ingVerb: String?, edVerb: String?, noun2: String?, title: String?, context: NSManagedObjectContext) {
-        
-        // Setting up the generic NSManagedObject functionality of the model object
-        // The generic chunk of clay
         self.init(context: context)
-        // Once we have the clay, we can begin sculpting it into our unique model object
         self.id = UUID()
         self.programmingLanguage =  programmingLanguage
         self.noun = noun
@@ -40,7 +34,6 @@ extension Template {
     }
     
     @discardableResult convenience init?(templateRepresentation: TemplateRepresentation, context: NSManagedObjectContext) {
-        
         self.init(id: templateRepresentation.id,
                   programmingLanguage: templateRepresentation.programmingLanguage,
                   noun: templateRepresentation.noun,

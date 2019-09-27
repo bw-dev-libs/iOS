@@ -1,9 +1,9 @@
 //
 //  APIcontroller.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Ciara Beitel on 9/25/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 import Foundation
@@ -31,12 +31,16 @@ class APIController {
 //        fetchTemplatesFromServer()
 //    }
     
+    // MARK: - Properties
+    
     let baseURL = URL(string: "https://dev-libs.herokuapp.com/api")!
     
     var bearer: Bearer?
     var user: Int?
     var template: Template?
     
+    // MARK: - Functions
+
     func signUp(with user: User, completion: @escaping (NetworkError?) -> Void) {
         let signUpURL = baseURL
             .appendingPathComponent("auth")
@@ -232,7 +236,7 @@ class APIController {
         let template = Template(id: id, programmingLanguage: programmingLanguage, noun: noun, verb: verb, ingVerb: ingVerb, edVerb: edVerb, noun2: noun2, title: title, context: CoreDataStack.shared.mainContext)
         
         CoreDataStack.shared.save()
-//        put(template: template)
+        //put(template: template)
         
         return template
     }
@@ -247,7 +251,7 @@ class APIController {
         template.edVerb = edVerb
         template.noun2 = noun2
   
-//        put(template: template)
+        //put(template: template)
         
         CoreDataStack.shared.save()
     }

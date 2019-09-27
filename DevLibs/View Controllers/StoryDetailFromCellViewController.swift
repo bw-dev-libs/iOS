@@ -1,14 +1,16 @@
 //
 //  StoryDetailFromCellViewController.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Ciara Beitel on 9/26/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 import UIKit
 
 class StoryDetailFromCellViewController: UIViewController {
+    
+    // MARK: - Properties
     
     var template: Template? {
         didSet {
@@ -16,16 +18,16 @@ class StoryDetailFromCellViewController: UIViewController {
         }
     }
 
-    
+    // MARK: - Outlets
+
     @IBOutlet weak var storyTitleLabel: UILabel!
-    
     @IBOutlet weak var completedStoryTextView: UITextView!
     
-    
+    // MARK: - Functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        // Do any additional setup after loading the view.
     }
     
     func updateViews() {
@@ -44,15 +46,4 @@ class StoryDetailFromCellViewController: UIViewController {
             storyTitleLabel.text = title
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

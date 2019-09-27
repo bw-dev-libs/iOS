@@ -1,9 +1,9 @@
 //
 //  CoreDataStack.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Marc Jacques on 9/26/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 import Foundation
@@ -13,6 +13,7 @@ class CoreDataStack {
    static let shared = CoreDataStack()
    private init() {
    }
+    
    lazy var container: NSPersistentContainer = {
        let container = NSPersistentContainer(name: "Templates")
        container.loadPersistentStores(completionHandler: { (_, error) in
@@ -23,9 +24,11 @@ class CoreDataStack {
        container.viewContext.automaticallyMergesChangesFromParent = true
        return container
    }()
+    
    var mainContext: NSManagedObjectContext {
        return container.viewContext
    }
+    
    func save(context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
        context.performAndWait {
            do {
@@ -37,7 +40,3 @@ class CoreDataStack {
        }
    }
 }
-
-
-
-
