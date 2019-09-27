@@ -12,9 +12,23 @@ class DashboardTableViewCell: UITableViewCell {
    
     let segueToDetail = "SegueToStoryViewDetailFromCell"
     
+    var template: Template? { //define model for the cell
+        didSet {
+            updateViews()
+        }
+    }
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var dateTimeLabel: UILabel!
+    
+    func updateViews() {
+        guard let template = template else { return }
+        
+        titleLabel.text = "\(template.id)"
+        dateTimeLabel.text = "\(Date())"
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

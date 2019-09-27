@@ -267,6 +267,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="V67-gd-nQV" id="LI7-3C-phF"/>
                         <segue destination="BPO-Kp-7yH" kind="show" identifier="SegueToStoryView1" id="B4V-yV-1K3"/>
                     </connections>
                 </viewController>

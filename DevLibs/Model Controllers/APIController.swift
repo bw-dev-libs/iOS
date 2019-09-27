@@ -189,8 +189,73 @@ class APIController {
             }
         }
     }
-
-
-
     
+    func put(template: Template, completion: @escaping () -> Void = { }) {
+        
+        let baseURL = URL(string: "https://dev-libs.herokuapp.com/api/templates/:id")!
+        
+        let requestURL = baseURL
+            .appendingPathExtension("json")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        
+        guard let templateRepresentation = template.templateRepresentation else {
+            NSLog("Template Representation is nil")
+            completion()
+            return
+        }
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(templateRepresentation)
+        } catch {
+            NSLog("Error encoding template representation: \(error)")
+            completion()
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            
+            if let error = error {
+                NSLog("Error PUTting template: \(error)")
+                completion()
+                return
+            }
+            
+            completion()
+        }.resume()
+    }
+    
+    // CREATE, UPDATE, DELETE TEMPLATE FUNCS
+    func createTemplate(id: Int, programmingLanguage: String, noun: String, verb: String, ingVerb: String, edVerb: String, noun2: String, userID: Int) -> Template {
+        
+        let template = Template(id: id, programmingLanguage: programmingLanguage, noun: noun, verb: verb, ingVerb: ingVerb, edVerb: edVerb, noun2: noun2, userID: userID, context: CoreDataStack.shared.mainContext)
+        
+        CoreDataStack.shared.save()
+        put(template: template)
+        
+        return template
+    }
+    
+    func updateTemplate(template: Template, id: Int, programmingLanguage: String, noun: String, verb: String, ingVerb: String, edVerb: String, noun2: String, userID: Int) {
+        
+        template.id = Int16(id)
+        template.programmingLanguage =  programmingLanguage
+        template.noun = noun
+        template.verb = verb
+        template.ingVerb = ingVerb
+        template.edVerb = edVerb
+        template.noun2 = noun2
+        template.userID = Int16(userID)
+  
+        put(template: template)
+        
+        CoreDataStack.shared.save()
+    }
+    
+    func deleteTemplate(template: Template) {
+        
+        CoreDataStack.shared.mainContext.delete(template)
+        CoreDataStack.shared.save()
+    }
 }
