@@ -37,6 +37,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainTextField.becomeFirstResponder()
+        mainTextField.delegate = self
     }
     
     // MARK: - Navigation

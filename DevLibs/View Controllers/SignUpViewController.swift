@@ -33,6 +33,9 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTextField.becomeFirstResponder()
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     @IBAction func forgotPasswordButtonTapped(_ sender: UIButton) {
