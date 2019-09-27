@@ -1,9 +1,9 @@
 //
 //  SignUpViewController.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Ciara Beitel on 9/24/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 import UIKit
@@ -14,6 +14,14 @@ enum LoginType {
 }
 
 class SignUpViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    var apiController = APIController()
+    var loginType = LoginType.signUp
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var signUpOrLogInLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,11 +29,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var loginSignUpText: UILabel!
     @IBOutlet weak var changeLoginSignUp: UIButton!
     
-    var apiController = APIController()
-    var loginType = LoginType.signUp
+    // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     @IBAction func forgotPasswordButtonTapped(_ sender: UIButton) {
@@ -72,6 +81,10 @@ class SignUpViewController: UIViewController {
             })
         }
     }
+        
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        changeUI()
+    }
     
     func changeUI() {
         if self.loginType == .logIn {
@@ -88,12 +101,9 @@ class SignUpViewController: UIViewController {
             self.changeLoginSignUp.setTitle("Sign Up", for: .normal)
         }
     }
-    
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
-        changeUI()
-    }
-    
 }
+
+// MARK: - Text Field Delegate
 
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

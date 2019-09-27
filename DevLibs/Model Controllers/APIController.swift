@@ -1,9 +1,9 @@
 //
 //  APIcontroller.swift
-//  DevLibs
+//  DevLibs Build Week 2
 //
-//  Created by Ciara Beitel on 9/25/19.
-//  Copyright © 2019 Ciara Beitel. All rights reserved.
+//  Created by Ciara Beitel and Marc Jacques on 9/27/19.
+//  Copyright © 2019 Ciara Beitel and Marc Jacques. All rights reserved.
 //
 
 import Foundation
@@ -27,15 +27,20 @@ enum NetworkError: Error {
 
 class APIController {
     
-    init() {
-        fetchTemplatesFromServer()
-    }
+//    init() {
+//        fetchTemplatesFromServer()
+//    }
+    
+    // MARK: - Properties
     
     let baseURL = URL(string: "https://dev-libs.herokuapp.com/api")!
     
     var bearer: Bearer?
     var user: Int?
+    var template: Template?
     
+    // MARK: - Functions
+
     func signUp(with user: User, completion: @escaping (NetworkError?) -> Void) {
         let signUpURL = baseURL
             .appendingPathComponent("auth")
@@ -122,74 +127,138 @@ class APIController {
         }.resume()
     }
     
-    func fetchTemplatesFromServer(completion: @escaping () -> Void = { }) {
-        let userID: LoginResponse
-        let templateURL = baseURL
-            .appendingPathComponent("users")
-            .appendingPathComponent(String(userID.user))
-            .appendingPathComponent("templates")
-        let requestURL = baseURL.appendingPathExtension("json")
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
-            if let error = error {
-                NSLog("Error fetching templates: \(error)")
-                completion()
-            }
-            guard let data = data else {
-                NSLog("No data returned from data task")
-                completion()
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                let templateReprentations = try decoder.decode([String: TemplateRepresentation].self, from: data).map({ $0.value })
-                self.updateTemplates(with: templateReprentations)
-            } catch {
-                NSLog("Error decoding: \(error)")
-            }
-            }.resume()
+//    func fetchTemplatesFromServer(completion: @escaping () -> Void = { }) {
+//        guard let userID = template?.userID else { return }
+//        let templateURL = baseURL
+//            .appendingPathComponent("users")
+//            .appendingPathComponent("\(userID)")
+//            .appendingPathComponent("templates")
+//        let requestURL = templateURL.appendingPathExtension("json")
+//        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+//            if let error = error {
+//                NSLog("Error fetching templates: \(error)")
+//                completion()
+//            }
+//            guard let data = data else {
+//                NSLog("No data returned from data task")
+//                completion()
+//                return
+//            }
+//            do {
+//                let decoder = JSONDecoder()
+//                let templateReprentations = try decoder.decode([String: TemplateRepresentation].self, from: data).map({ $0.value })
+//                self.updateTemplates(with: templateReprentations)
+//            } catch {
+//                NSLog("Error decoding: \(error)")
+//            }
+//        }.resume()
+//    }
+    
+//    func updateTemplates(with representations: [TemplateRepresentation]) {
+//
+//        let idsToFetch = representations.compactMap({$0.id})
+//
+//        let representationsByID = Dictionary(uniqueKeysWithValues: zip(idsToFetch, representations))
+//
+//        var templatesToCreate = representationsByID
+//        let context = CoreDataStack.shared.container.newBackgroundContext()
+//        context.performAndWait {
+//            do {
+//                let fetchRequest: NSFetchRequest<Template> = Template.fetchRequest()
+//
+//                fetchRequest.predicate = NSPredicate(format: "id IN %@", idsToFetch)
+//
+//                let existingTemplates = try context.fetch(fetchRequest)
+//
+//                for template in existingTemplates {
+//                    let id = template.id
+//                    guard let representation = representationsByID[Int(id)] else { continue }
+//                    template.id = Int16(representation.id)
+//                    template.programmingLanguage = representation.programmingLanguage
+//                    template.noun = representation.noun
+//                    template.verb = representation.verb
+//                    template.ingVerb = representation.ingVerb
+//                    template.edVerb = representation.edVerb
+//                    template.noun2 = representation.noun2
+//                    template.userID = Int16(representation.userID)
+//                    templatesToCreate.removeValue(forKey: Int(id))
+//                }
+//
+//                for representation in templatesToCreate.values {
+//                    Template(templateRepresentation: representation, context: context)
+//                }
+//                CoreDataStack.shared.save(context: context)
+//            } catch {
+//                NSLog("Error fetching templates from persistent store: \(error)")
+//            }
+//        }
+//    }
+    
+//    func put(template: Template, completion: @escaping () -> Void = { }) {
+//
+//        let baseURL = URL(string: "https://dev-libs.herokuapp.com/api/templates/:id")!
+//
+//        let requestURL = baseURL
+//            .appendingPathExtension("json")
+//
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = HTTPMethod.put.rawValue
+//
+//        guard let templateRepresentation = template.templateRepresentation else {
+//            NSLog("Template Representation is nil")
+//            completion()
+//            return
+//        }
+//
+//        do {
+//            request.httpBody = try JSONEncoder().encode(templateRepresentation)
+//        } catch {
+//            NSLog("Error encoding template representation: \(error)")
+//            completion()
+//            return
+//        }
+//
+//        URLSession.shared.dataTask(with: request) { (_, _, error) in
+//
+//            if let error = error {
+//                NSLog("Error PUTting template: \(error)")
+//                completion()
+//                return
+//            }
+//
+//            completion()
+//        }.resume()
+//    }
+    
+    // CREATE, UPDATE, DELETE TEMPLATE FUNCS
+    func createTemplate(id: UUID, programmingLanguage: String, noun: String, verb: String, ingVerb: String, edVerb: String, noun2: String, title: String) -> Template {
+        
+        let template = Template(id: id, programmingLanguage: programmingLanguage, noun: noun, verb: verb, ingVerb: ingVerb, edVerb: edVerb, noun2: noun2, title: title, context: CoreDataStack.shared.mainContext)
+        
+        CoreDataStack.shared.save()
+        //put(template: template)
+        
+        return template
     }
     
-    func updateTemplates(with representations: [TemplateRepresentation]) {
-              
-        let idsToFetch = representations.compactMap({$0.id})
+    func updateTemplate(template: Template, id: UUID, programmingLanguage: String, noun: String, verb: String, ingVerb: String, edVerb: String, noun2: String, userID: Int) {
         
-        let representationsByID = Dictionary(uniqueKeysWithValues: zip(idsToFetch, representations))
+        template.id = id
+        template.programmingLanguage =  programmingLanguage
+        template.noun = noun
+        template.verb = verb
+        template.ingVerb = ingVerb
+        template.edVerb = edVerb
+        template.noun2 = noun2
+  
+        //put(template: template)
         
-        var templatesToCreate = representationsByID
-        let context = CoreDataStack.shared.container.newBackgroundContext()
-        context.performAndWait {
-            do {
-                let fetchRequest: NSFetchRequest<Template> = Template.fetchRequest()
-                
-                fetchRequest.predicate = NSPredicate(format: "id IN %@", idsToFetch)
-               
-                let existingTemplates = try context.fetch(fetchRequest)
-                
-                for template in existingTemplates {
-                    let id = template.id
-                    guard let representation = representationsByID[Int(id)] else { continue }
-                    template.id = representation.id
-                    template.programmingLanguage = representation.programmingLanguage
-                    template.noun = representation.noun
-                    template.verb = representation.verb
-                    template.ingVerb = representation.ingVerb
-                    template.edVerb = representation.edVerb
-                    template.noun2 = representation.noun2
-                    template.userID = representation.userID
-                    templatesToCreate.removeValue(forKey: Int(id))
-                }
-                
-                for representation in templatesToCreate.values {
-                    Template(templateRepresentation: representation, context: context)
-                }
-                CoreDataStack.shared.save(context: context)
-            } catch {
-                NSLog("Error fetching templates from persistent store: \(error)")
-            }
-        }
+        CoreDataStack.shared.save()
     }
-
-
-
     
+    func deleteTemplate(template: Template) {
+        
+        CoreDataStack.shared.mainContext.delete(template)
+        CoreDataStack.shared.save()
+    }
 }
